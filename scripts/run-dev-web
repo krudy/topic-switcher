@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# scripts/run-dev-web: Compiles the project files (unminified) and then starts the local server
+
+set -e
+
+echo "--- building main JS file unminified"
+./node_modules/.bin/webpack
+
+echo "--- running in dev mode"
+npm start
