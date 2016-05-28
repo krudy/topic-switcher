@@ -7,14 +7,14 @@ var sassLoaders = [
 ];
 
 module.exports = {
-  context: __dirname + '/public/pages',
+  context: __dirname + '/src/client/pages',
   entry: {
-    home: './home.jsx',
+    home: './main.jsx',
   },
 
   output: {
     filename: '[name].js',
-    path: './public/build',
+    path: './src/client/build',
   },
 
   module: {
