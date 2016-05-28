@@ -21,12 +21,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(require('node-sass-middleware')({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
+  src: path.join(__dirname, '../client'),
+  dest: path.join(__dirname, '../client'),
   indentedSyntax: true,
   sourceMap: true
 }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../client')));
 
 app.use('/', routes);
 app.use('/users', users);

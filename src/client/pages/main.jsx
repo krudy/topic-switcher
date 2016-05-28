@@ -3,11 +3,11 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-import MainApp from '../javascripts';
+import MainApp from '../modules/main/components/MainApp';
 
 ReactDom.render(
   <div>
-    <div className='mainContent'>Home page</div>
+    <MainApp />
   </div>,
   document.getElementById('content')
 );
