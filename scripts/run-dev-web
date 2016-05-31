@@ -8,4 +8,4 @@ echo "--- building main JS file unminified"
 ./node_modules/.bin/webpack
 
 echo "--- running in dev mode"
-npm start
+node ./src/server/bin/www
