@@ -1,12 +1,24 @@
 import React from 'react';
 
+import actions from '../../../../../../core/modules/main/actions';
+
 import './style.scss';
 
 const Header = React.createClass({
+  _updateActiveTopic(index) {
+    let maxTopicArratLength = this.props.subTopicIndexs.size;
+    actions.updateActiveTopic(index, maxTopicArratLength);
+  },
+
   _renderNavTab(index) {
     var displayText = index+1;
     return (
-      <a href="#top" key={index} className="mdl-layout__tab nav-tab">{displayText}</a>
+      <a href="#top"
+        key={index}
+        className="mdl-layout__tab nav-tab"
+        onClick={this._updateActiveTopic.bind(this, index)}>
+        {displayText}
+      </a>
     );
   },
 
@@ -30,8 +42,8 @@ const Header = React.createClass({
         </div>
         <div className="mdl-layout__tab-bar tab-container">
           {
-            this.props.subtopics.map(
-            (topic, index) => this._renderNavTab(index)
+            this.props.subTopicIndexs.map(
+            (value, index) => this._renderNavTab(index)
           )}
         </div>
         <div className='mdl-tabs__panel' id='top'></div>

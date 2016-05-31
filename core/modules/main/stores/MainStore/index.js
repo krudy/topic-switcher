@@ -1,7 +1,13 @@
 import { Store, toImmutable } from 'nuclear-js';
+import actionTypes from '../../actionTypes';
 
 var MainStore = Store({
   getInitialState,
+
+  initialize() {
+    this.on(actionTypes.COMPLETE_TASK, onCompleteTask);
+    this.on(actionTypes.UPDATE_ACTIVE_TOPIC, onUpdateActiveTopic);
+  },
 });
 
 function getInitialState() {
@@ -22,8 +28,19 @@ function getInitialState() {
         { index: 8, title: 'Revision', completed: false },
         { index: 9, title: 'Topic Test', completed: false }
       ],
+      activeTopic: {
+        indexActive: 0,
+      },
     },
   });
+}
+
+function onCompleteTask(state, { index }) {
+  return state.updateIn(['data', 'subtopics', index, 'completed'], () => true);
+}
+
+function onUpdateActiveTopic(state, { newActiveIndexObject }) {
+  return state.mergeIn(['data', 'activeTopic'], newActiveIndexObject);
 }
 
 export default MainStore;
