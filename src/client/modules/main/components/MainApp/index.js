@@ -6,7 +6,7 @@ import Container from '../Container';
 const MainApp = React.createClass({
   getInitialState() {
     return {
-      title: 'Hello World',
+      title: 'Geometry',
       subtopics: [
         { index: 1, title: "Triangles", completed: true },
         { index: 2, title: "Angle Sum", completed: true },

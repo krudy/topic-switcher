@@ -2,10 +2,19 @@ import React from 'react';
 
 import Header from '../Header';
 import Navigation from '../Navigation';
+import TopicCard from '../TopicCard';
 
 import './style.scss';
 
 const Container = React.createClass({
+  _renderTopicCard(topic, index) {
+    return (
+      <div key={index} className='mdl-cell mdl-cell--4-col'>
+        <TopicCard topic={topic} />
+      </div>
+    );
+  },
+
   render() {
     return (
       <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -14,7 +23,12 @@ const Container = React.createClass({
           subtopics={this.props.subtopics} />
         <Navigation title={this.props.title} />
         <main className="mdl-layout__content">
-          <div className="page-content"></div>
+          <div className='topicCardContainer mdl-grid'>
+            {
+              this.props.subtopics.map(
+              (topic, index) => this._renderTopicCard(topic, index)
+            )}
+          </div>
         </main>
       </div>
     );

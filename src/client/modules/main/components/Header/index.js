@@ -29,7 +29,7 @@ const Header = React.createClass({
           </nav>
         </div>
         <div className="mdl-layout__tab-bar tab-container">
-          { /* Loop through the different Reasons */
+          {
             this.props.subtopics.map(
             (topic, index) => this._renderNavTab(index)
           )}
