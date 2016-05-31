@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '../Header';
 import Navigation from '../Navigation';
 import TopicCard from '../TopicCard';
+import Footer from '../Footer';
 
 import './style.scss';
 
@@ -30,6 +31,8 @@ const Container = React.createClass({
               (topic, index) => this._renderTopicCard(topic, index)
             )}
           </div>
+          <div className='mdl-tabs__panel' id='top'></div>
+          <Footer />
         </main>
       </div>
     );
