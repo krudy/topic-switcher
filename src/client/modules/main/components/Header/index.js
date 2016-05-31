@@ -46,7 +46,6 @@ const Header = React.createClass({
             (value, index) => this._renderNavTab(index)
           )}
         </div>
-        <div className='mdl-tabs__panel' id='top'></div>
       </header>
     );
   },
