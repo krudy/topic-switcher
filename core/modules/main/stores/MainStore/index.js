@@ -30,6 +30,7 @@ function getInitialState() {
       ],
       activeTopic: {
         indexActive: 0,
+        indexRight: 1,
       },
     },
   });
