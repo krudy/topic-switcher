@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./src/server/bin/www"
+    "start": "./scripts/run-dev-web"
   },
   "dependencies": {
     "babel-core": "^6.9.0",
