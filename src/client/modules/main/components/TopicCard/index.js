@@ -1,15 +1,22 @@
 import React from 'react';
 
+import actions from '../../../../../../core/modules/main/actions';
+
 import './style.scss';
 
 const TopicCard = React.createClass({
   _isTopicCompleted() {
-    return this.props.topic.completed;
+    return this.props.topic.get('completed');
+  },
+
+  _completeTask() {
+    let index = this.props.topic.get('index') - 1;
+    actions.completeTask(index);
   },
 
   _renderTopicTitle() {
-    let topicIndex = this.props.topic.index;
-    let topicName = this.props.topic.title;
+    let topicIndex = this.props.topic.get('index');
+    let topicName = this.props.topic.get('title');
     let topicCardTitle = topicIndex + '. ' + topicName;
     return topicCardTitle;
   },
@@ -24,7 +31,9 @@ const TopicCard = React.createClass({
 
   _renderTopicNavButton() {
     return (
-      <button className='topic-nav-button mdl-button mdl-js-button'>
+      <button
+        className='topic-nav-button mdl-button mdl-js-button'
+        onClick={this._completeTask} >
         Lets Go
       </button>
     );

@@ -8,6 +8,7 @@ import './style.scss';
 
 const Container = React.createClass({
   _renderTopicCard(topic, index) {
+
     return (
       <div key={index} className='mdl-cell mdl-cell--4-col'>
         <TopicCard topic={topic} />
@@ -20,12 +21,12 @@ const Container = React.createClass({
       <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <Header
           title={this.props.title}
-          subtopics={this.props.subtopics} />
+          subTopicIndexs={this.props.subTopicIndexs} />
         <Navigation title={this.props.title} />
         <main className="mdl-layout__content">
           <div className='topicCardContainer mdl-grid'>
             {
-              this.props.subtopics.map(
+              this.props.activeTopics.map(
               (topic, index) => this._renderTopicCard(topic, index)
             )}
           </div>
