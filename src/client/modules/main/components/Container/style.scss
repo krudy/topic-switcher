@@ -1,3 +1,14 @@
 .topic-card__container {
-  max-width: 1000px;
+  padding-top: 25px;
+}
+
+.slick-track {
+  min-height: 535px;
+}
+
+.slick-center {
+  .topic-card {
+    transition: all .3s ease;
+    transform: scale(1.08);
+  }
 }
