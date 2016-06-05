@@ -1,7 +1,8 @@
 .topic-card {
   min-height: 500px !important;
   background: linear-gradient(170deg, #8C88FF 61%, #fff 50%) !important;
-  width: initial !important
+  width: initial !important;
+  margin: 10px;
 }
 
 .topic-card__title-container {
@@ -40,4 +41,5 @@
 .complete-button__image {
   background-color: #50D2C2;
   border-radius: 30px;
+  margin: auto;;
 }

@@ -6,8 +6,7 @@ import './style.scss';
 
 const Header = React.createClass({
   _updateActiveTopic(index) {
-    let maxTopicArratLength = this.props.subTopicIndexs.size;
-    actions.updateActiveTopic(index, maxTopicArratLength);
+    actions.updateActiveTopic(index);
   },
 
   _renderNavTab(index) {

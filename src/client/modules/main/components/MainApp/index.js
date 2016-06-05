@@ -14,8 +14,9 @@ const MainApp = React.createClass({
   getDataBindings() {
     return {
       title: getters.topicTitle,
-      activeTopics: getters.activeTopics,
+      activeTopic: getters.activeTopic,
       subTopicIndexs: getters.subTopicIndexs,
+      subTopics: getters.subTopics,
     };
   },
 
@@ -23,8 +24,9 @@ const MainApp = React.createClass({
     return (
       <Container
         title={this.state.title}
-        activeTopics={this.state.activeTopics}
-        subTopicIndexs={this.state.subTopicIndexs} />
+        activeTopic={this.state.activeTopic}
+        subTopicIndexs={this.state.subTopicIndexs}
+        subTopics={this.state.subTopics} />
     );
   },
 });
