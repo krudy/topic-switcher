@@ -25,7 +25,7 @@ const Container = React.createClass({
           subTopicIndexs={this.props.subTopicIndexs} />
         <Navigation title={this.props.title} />
         <main className="mdl-layout__content">
-          <div className='topicCardContainer mdl-grid'>
+          <div className='topic-card__container mdl-grid'>
             {
               this.props.activeTopics.map(
               (topic, index) => this._renderTopicCard(topic, index)
