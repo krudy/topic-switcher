@@ -28,10 +28,7 @@ function getInitialState() {
         { index: 8, title: 'Revision', completed: false },
         { index: 9, title: 'Topic Test', completed: false }
       ],
-      activeTopic: {
-        indexActive: 0,
-        indexRight: 1,
-      },
+      activeTopic: 0,
     },
   });
 }
@@ -40,8 +37,8 @@ function onCompleteTask(state, { index }) {
   return state.updateIn(['data', 'subtopics', index, 'completed'], () => true);
 }
 
-function onUpdateActiveTopic(state, { newActiveIndexObject }) {
-  return state.mergeIn(['data', 'activeTopic'], newActiveIndexObject);
+function onUpdateActiveTopic(state, { newActiveIndex }) {
+  return state.updateIn(['data', 'activeTopic'], () => newActiveIndex);
 }
 
 export default MainStore;

@@ -1,31 +1,9 @@
 import { toImmutable } from 'nuclear-js';
 
-const activeTopics = [
-  ['mainStore', 'data', 'subtopics'],
+const activeTopic = [
   ['mainStore', 'data', 'activeTopic'],
-  (subtopics, activeTopicobject) => {
-    let topicArray = [];
-
-    // Add Left Topic
-    if (!!activeTopicobject.get('indexLeft') || activeTopicobject.get('indexLeft') === 0) {
-      let indexLeft = activeTopicobject.get('indexLeft');
-      let topicLeft = subtopics.get(indexLeft);
-      topicArray.push(topicLeft);
-    }
-
-    // Add Active topic
-    let indexActive = activeTopicobject.get('indexActive');
-    let topicActive = subtopics.get(indexActive);
-    topicArray.push(topicActive);
-
-    // Add Right topic
-    if (!!activeTopicobject.get('indexRight')) {
-      let indexRight = activeTopicobject.get('indexRight');
-      let topicRight = subtopics.get(indexRight);
-      topicArray.push(topicRight);
-    }
-
-    return topicArray;
+  (activeTopic) => {
+    return activeTopic;
   },
 ];
 
@@ -39,6 +17,13 @@ const subTopicIndexs = [
   },
 ];
 
+const subTopics = [
+  ['mainStore', 'data', 'subtopics'],
+  (subtopics) => {
+    return subtopics;
+  },
+];
+
 const topicTitle = [
   ['mainStore', 'data', 'topic'],
   (topic) => {
@@ -47,7 +32,8 @@ const topicTitle = [
 ];
 
 export default {
-  activeTopics,
+  activeTopic,
   subTopicIndexs,
+  subTopics,
   topicTitle,
 }
